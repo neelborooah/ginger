@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ginger Payments - Frontend Assignment</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,300,700"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Feel free to remove the style tag-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            max-width: 1024px;
+            margin: 15px auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        aside {
+            display: flex;
+            flex-direction: column;
+            width: 220px;
+            height: 100%;
+        }
+        section {
+            padding-left: 5px;
+            text-align: center;
+        }
+        aside > *,
+        section > * {
+            margin: 5px 0;
+        }
+        main {
+            display: flex;
+            width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+        aside select {
+            text-align-last:center;
+        }
+
+
+        @media screen and (max-width: 540px) {
+            aside {
+                width: 100%;
+                height: auto;
+            }
+            main { 
+                flex-direction: row;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Assignment</h1>
+    </header>
+    <main>
+        <aside>
+            <button id="btn_callback" class="btn btn-default">Callback</button>
+            <button id="btn_promise" class="btn btn-default">Promise</button>
+            <select id="btn_payment" class="form-control">
+                <option val=""></option>
+                <option val="ideal">Ideal</option>
+                <option val="creditcard">Credit Card</option>
+                <option val="bank-transfer">Bank Transfer</option>
+            </select>
+            <hr />
+            <button id="btn_add_payment" class="btn btn-default">Add Record</button>
+        </aside>
+        <section id="main_content">
+            <!-- Payments Table | Rendered via JS-->
+        </section>
+
+        <div id="add-payment-container" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Add Record</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="merchant" id="add_merchant" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <input type="text" class="form-control" placeholder="method" id="add_method" required/> -->
+                                <select id="add_method" class="form-control" placeholder="method" required>
+                                    <option val="ideal">Ideal</option>
+                                    <option val="creditcard">Credit Card</option>
+                                    <option val="bank-transfer">Bank Transfer</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-8">
+                                    <input type="number" min="0" class="form-control" placeholder="amount" id="add_amount" required/>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" placeholder="currency" id="add_currency" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-submit" value="save"/>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
