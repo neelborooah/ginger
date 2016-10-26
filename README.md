@@ -1,7 +1,7 @@
 
  Dependencies: [JSON-server](https://www.npmjs.com/package/json-server)
 
- ## Setup
+###Setup
  
  To install and start the JSON-server type the following command in your terminal:
  
