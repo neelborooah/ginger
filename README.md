@@ -3,10 +3,14 @@
 
  ## Setup
  
- To install and start the JSON-server type the following command in your terminal(run the JSON-server on port 3000 or change the url in index.js):
+ To install and start the JSON-server type the following command in your terminal:
  
  ```
  npm install && npm run start:api
  ``` 
  
  Open the index.html file
+
+
+###Note
+if you are running the server on a port other than 3000, please change the `app.store.url` in `js/index.js`.
